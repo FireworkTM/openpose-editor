@@ -479,7 +479,7 @@ function sendImage(type, index){
             switch_to_img2img()
         }
 
-		// 20230328 JY 
+        // 20230328 JY 
         const accordion = gradioApp().querySelector(selector).querySelector("#controlnet").querySelectorAll("span.icon.svelte-s1r2yt")[0];
 		// Show controlNet box
 		let rotate = accordion.style.transform.match(/rotate\((\d+)(.+)\)/);
@@ -488,8 +488,10 @@ function sendImage(type, index){
 			if (num == "90") {
 				accordion.click()
 			}
-		}	
+		}
+		
 		const input = gradioApp().querySelector(selector).querySelector("#controlnet").querySelector("input[type='file']");
+		
         input.value = "";
         input.files = list;
         const event = new Event('change', { 'bubbles': true, "composed": true });
